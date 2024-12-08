@@ -1,0 +1,24 @@
+type Household {
+    eircode: String!
+    numberOfOccupants: Int!
+    maxNumberOfOccupants: Int!
+    ownerOccupied: Boolean!
+    pets: [Pet]
+}
+
+type Pet {
+    id: Int!
+    name: String!
+    animalType: String!
+    breed: String!
+    age: Int!
+    household: Household!
+}
+
+type Query {
+    getPet(id: Int!): Int
+}
+
+type Mutation {
+    deletePet(id: Int!): Int
+}
